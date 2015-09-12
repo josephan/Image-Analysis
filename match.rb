@@ -9,8 +9,8 @@ image_dir = File.join(this_dir, 'images')
 # Which images should be compared?
 # Larger image lited first.
 image_tests = [
-  ['haystack.png', 'needle.png'],             # Parrots (72dpi PNG)
-  # ['460249177.jpg', '460249177a.jpg'],      # Parrots (300dpi JPG)
+  # ['haystack.png', 'needle.png'],             # Parrots (72dpi PNG)
+  ['460249177.jpg', '460249177a.jpg'],      # Parrots (300dpi JPG)
   # ['460249177.jpg', '477899129.jpg'],       # Parrots
   # ['78771293.jpg', '78771293a.jpg'],        # Wedding
   # ['103992931.jpg', '168680522.jpg'],       # Beach
@@ -28,8 +28,8 @@ image_tests.each_with_index do |test_set, i|
 	im = ImageMatcher.new
 	im.search_image = search_image_path
 	im.template_image = template_image_path
-	im.verbose = true
-	im.strategy = 'full'
+	im.verbose = false
+	im.strategy = 'pixels'
 	im.fuzz = 0.0
 	im.highlight_match = true
 	im.match!

@@ -14,7 +14,7 @@ class ImageMatcher
 	attr_reader :search_cols, :search_rows
 	attr_accessor :strategy, :verbose, :highlight_match, :fuzz
 
-	@@startegies = {}
+	@@strategies = {}
 
 	include ImageMatcherStrategies
 
@@ -140,8 +140,6 @@ class ImageMatcher
 			area.rectangle(match_x, match_y, end_x, end_y)
 			area.draw(search_image)
 			search_image.write(matchfile)
-		else
-			raise "No match found"
 		end
 	end
 
@@ -152,7 +150,7 @@ class ImageMatcher
 		if search_image
 			name_parts = search_image.filename.split('.')
 			ext = name_parts.pop
-			name = name_parts.jooin('.')
+			name = name_parts.join('.')
 			return "#{name}_match.#{ext}"
 		else
 			return "no_search_image.png"

@@ -28,8 +28,8 @@ image_tests.each_with_index do |test_set, i|
 	im = ImageMatcher.new
 	im.search_image = search_image_path
 	im.template_image = template_image_path
-	im.verbose = false
-	im.strategy = 'pixels'
+	im.verbose = true
+	im.strategy = 'opencv'
 	im.fuzz = 0.0
 	im.highlight_match = true
 	im.match!
